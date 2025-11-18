@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tanks — Modern HTML5</title>
+  </head>
+  <body>
+    <div id="app">
+      <div class="hud">
+        <div class="controls">
+          <div class="toolbar-left">
+            <div class="group">
+              <label>
+                Landscape
+                <select id="landscape">
+                  <option value="earth">Earth Hills</option>
+                  <option value="moon">Moon South Pole Crater</option>
+                  <option value="mars">Mars Deep Trench</option>
+                </select>
+              </label>
+              <label>
+                Weapon
+                <select id="weapon">
+                  <option value="shell">Shell</option>
+                  <option value="laser" disabled>Laser (500 pts)</option>
+                  <option value="missile" disabled>Missile (200 pts)</option>
+                  <option value="scatter" disabled>Scatter (400 pts)</option>
+                  <option value="nuke" disabled>Nuke (800 pts)</option>
+                </select>
+              </label>
+            </div>
+            <div class="group">
+              <label>
+                P1
+                <select id="p1Type">
+                  <option value="human">Human</option>
+                  <option value="easy">Easy</option>
+                  <option value="medium">Medium</option>
+                  <option value="hard">Hard</option>
+                </select>
+              </label>
+              <label>
+                P2
+                <select id="p2Type">
+                  <option value="human">Human</option>
+                  <option value="easy">Easy</option>
+                  <option value="medium" selected>Medium</option>
+                  <option value="hard">Hard</option>
+                </select>
+              </label>
+              <label>
+                P3
+                <select id="p3Type">
+                  <option value="human">Human</option>
+                  <option value="easy">Easy</option>
+                  <option value="medium">Medium</option>
+                  <option value="hard">Hard</option>
+                </select>
+              </label>
+              <label>
+                P4
+                <select id="p4Type">
+                  <option value="human">Human</option>
+                  <option value="easy" selected>Easy</option>
+                  <option value="medium">Medium</option>
+                  <option value="hard">Hard</option>
+                </select>
+              </label>
+              <button id="newRound">New Round</button>
+              <button id="pauseBtn">Pause</button>
+              <button id="muteToggle">Mute</button>
+            </div>
+          </div>
+          <div class="toolbar-center">
+            <div class="wind">
+              <span class="wind-arrow" id="windArrow">→</span>
+              <div class="wind-bar">
+                <div class="wind-left" id="windLeftFill"></div>
+                <div class="wind-right" id="windRightFill"></div>
+                <div class="wind-axis"></div>
+              </div>
+              <span class="wind-strength" id="windVal">0.00</span>
+            </div>
+            <span class="turn">Turn: <span id="turnVal">P1</span></span>
+          </div>
+          <div class="toolbar-right">
+            <div class="scoreboard">
+              <div class="p" id="scoreP1">
+                <span class="dot" style="--c:#63b3ff"></span>
+                <div class="bars">
+                  <div class="health-bar"><div class="health-fill" id="healthP1"></div></div>
+                  <div class="fuel-bar"><div class="fuel-fill" id="fuelP1"></div></div>
+                </div>
+                P1: <b>0</b>
+              </div>
+              <div class="p" id="scoreP2">
+                <span class="dot" style="--c:#ff6b6b"></span>
+                <div class="bars">
+                  <div class="health-bar"><div class="health-fill" id="healthP2"></div></div>
+                  <div class="fuel-bar"><div class="fuel-fill" id="fuelP2"></div></div>
+                </div>
+                P2: <b>0</b>
+              </div>
+              <div class="p" id="scoreP3">
+                <span class="dot" style="--c:#8bd66a"></span>
+                <div class="bars">
+                  <div class="health-bar"><div class="health-fill" id="healthP3"></div></div>
+                  <div class="fuel-bar"><div class="fuel-fill" id="fuelP3"></div></div>
+                </div>
+                P3: <b>0</b>
+              </div>
+              <div class="p" id="scoreP4">
+                <span class="dot" style="--c:#d6b36a"></span>
+                <div class="bars">
+                  <div class="health-bar"><div class="health-fill" id="healthP4"></div></div>
+                  <div class="fuel-bar"><div class="fuel-fill" id="fuelP4"></div></div>
+                </div>
+                P4: <b>0</b>
+              </div>
+            </div>
+          </div>
+          <div class="toolbar-bottom">
+            <label>
+              Angle
+              <input id="angle" type="range" min="0" max="180" step="1" value="45" />
+              <span id="angleVal">45°</span>
+            </label>
+            <label>
+              Power
+              <input id="power" type="range" min="10" max="100" step="1" value="60" />
+              <span id="powerVal">60</span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <canvas id="game" width="960" height="540"></canvas>
+      <div id="overlay" class="overlay hidden">
+        <div class="panel" id="overlayText">Paused</div>
+        <div class="help" id="overlayHelp">
+          <b>Controls</b>
+          <div>Move: ← →</div>
+          <div>Aim: ↑ ↓</div>
+          <div>Power: Q/E</div>
+          <div>Fire: Space</div>
+          <div>Pause: P</div>
+          <div>Mute: M</div>
+        </div>
+        <button id="continueBtn" class="hidden">Continue</button>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

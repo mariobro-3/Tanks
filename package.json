@@ -1,0 +1,27 @@
+{
+  "name": "tanks-modern",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Tanks Modern game",
+  "author": "mariobro-3",
+  "license": "MIT",
+  "type": "module",
+  "main": "electron.js",
+  "homepage": "./",
+  "scripts": {
+    "dev": "vite --host --port 3000",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "electron": "electron .",
+    "electron-dev": "cross-env NODE_ENV=development electron .",
+    "package-win": "npm run build && electron-packager . \"Tanks Modern\" --platform=win32 --arch=x64 --out=dist-packager --overwrite --prune --ignore=/dist-electron --ignore=/node_modules/.cache --app-version=%npm_package_version% --asar --executable-name=TanksModern --icon=icon.ico"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "electron": "^38.1.0",
+    "electron-builder": "^26.0.12",
+    "electron-packager": "^17.1.2",
+    "typescript": "~5.8.3",
+    "vite": "^7.1.2"
+  }
+}
