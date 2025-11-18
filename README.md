@@ -2,6 +2,10 @@
 
 A modern HTML5 remake of the classic artillery tank battle game, featuring physics-based projectile mechanics, terrain deformation, and AI opponents. Built with TypeScript, HTML5 Canvas, and packaged as a desktop application using Electron.
 
+THIS GAME HAS BUGS, ITS NOT PERFECT, PLAY AND DEVELOP AT YOUR OWN RISK.
+I had fun making it and thats all that matters to me. Enjoy.
+-mariobro-3
+
 ![Tanks Modern](https://img.shields.io/badge/version-0.0.0-blue)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.8-blue)
 ![Electron](https://img.shields.io/badge/Electron-38.1-blue)
